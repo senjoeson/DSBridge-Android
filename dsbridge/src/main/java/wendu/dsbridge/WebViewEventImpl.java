@@ -290,12 +290,7 @@ public class WebViewEventImpl implements WebViewEvent {
 
 
     public void evaluateJavascript(final String script) {
-        runOnMainThread(new Runnable() {
-            @Override
-            public void run() {
-                _evaluateJavascript(script);
-            }
-        });
+        runOnMainThread(() -> _evaluateJavascript(script));
     }
 
     private void _evaluateJavascript(String script) {
